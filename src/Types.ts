@@ -259,7 +259,7 @@ export interface MasterPassSDKMethods {
     validateTransaction: MFSValidateTransactionFunction
     deleteCard: MFSDeleteCardFunction
     getLastToken: MFSGetLastTokenFunction
-    resendOTP: MFSResendOtpFunction
+    resendOtp: MFSResendOtpFunction
     linkCardToClient: MFSLinkCardToClientFunction
     purchase: MFSPurchaseFunction
     setAdditionalParameters: MFSSetAdditionalParameters

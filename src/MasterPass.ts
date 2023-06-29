@@ -111,7 +111,7 @@ export default class MasterPass {
         new Promise((resolve, reject) => {
             const lastToken = MFS.getLastToken()
 
-            MFS.resendOTP(lastToken, sendSMsLanguage, (status, response) => {
+            MFS.resendOtp(lastToken, sendSMsLanguage, (status, response) => {
                 return Utils.mfsResponseHandler(
                     status,
                     response,
