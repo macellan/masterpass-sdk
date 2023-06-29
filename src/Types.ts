@@ -265,7 +265,7 @@ export interface MasterPassSDKMethods {
     setAdditionalParameters: MFSSetAdditionalParameters
 }
 
-export type AccountType = 'not-user' | 'unliked' | 'registered' | 'unknown'
+export type AccountType = 'not-user' | 'unlinked' | 'registered' | 'unknown'
 
 export type ParseAccountStatusFunction = (accountStatus: string) => AccountType
 

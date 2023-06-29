@@ -36,7 +36,7 @@ const mfsResponseHandler: MFSResponseHandlerFunction = (
 
 const parseAccountStatus: ParseAccountStatusFunction = accountStatus => {
     if (accountStatus.substring(0, 6) === '000000') return 'not-user'
-    if (accountStatus.substring(1, 6) === '11000') return 'unliked'
+    if (accountStatus.substring(1, 6) === '11000') return 'unlinked'
     if (accountStatus.substring(1, 6) === '11100') return 'registered'
     return 'unknown'
 }
