@@ -237,7 +237,19 @@ export interface PurchaseData {
     paymentType?: string
 }
 
-export interface PurchaseResponse extends MFSBaseResponse {}
+export interface PurchaseResponse extends MFSBaseResponse {
+    accountStatus: string | undefined
+    amount: string | undefined
+    installmentCount: string | undefined
+    orderNo: string | undefined
+    token: string
+    url3D: string
+    url3DError: string
+    url3DSuccess: string
+    urlLoan: string | null
+    urlLoanError: string | null
+    urlLoanSuccess: string | null
+}
 
 export type MFSPurchaseFunction = (
     data: PurchaseData,
