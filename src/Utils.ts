@@ -30,7 +30,7 @@ const mfsResponseHandler: MFSResponseHandlerFunction = (
     reject({
         status: response.responseCode,
         message: response.responseDescription,
-        response: response,
+        data: { ...response, message: response.responseDescription },
     })
 }
 

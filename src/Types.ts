@@ -138,6 +138,7 @@ export interface ValidateTransactionData {
 }
 
 export interface ValidateTransactionResponse extends MFSBaseResponse {
+    token: string
     url3D: string | undefined
     url3DError: string | undefined
     url3DSuccess: string | undefined
