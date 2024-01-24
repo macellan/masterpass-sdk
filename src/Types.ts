@@ -269,12 +269,12 @@ export interface PurchaseAndRegisterData {
     fP?: string
     amount: string
     actionType?: string
-    firstName: string
-    lastName: string
+    firstName?: string
+    lastName?: string
     gender?: string
     expiryDate: string
     rtaPan: string
-    cardHolderName: string
+    cardHolderName?: string
     orderNo?: string
     merchantId?: string
     rewardName?: string
@@ -290,7 +290,11 @@ export interface PurchaseAndRegisterData {
     paymentType?: string
 }
 
-export interface PurchaseAndRegisterResponse extends MFSBaseResponse {}
+export interface PurchaseAndRegisterResponse extends MFSBaseResponse {
+    url3D: string
+    url3DSuccess: string
+    url3DError: string
+}
 
 export type MFSPurchaseAndRegisterFunction = (
     data: PurchaseAndRegisterData,
@@ -319,7 +323,15 @@ export interface DirectPurchaseData {
     rewardValue?: string
 }
 
-export interface DirectPurchaseResponse extends MFSBaseResponse {}
+export interface DirectPurchaseResponse extends MFSBaseResponse {
+    url3D: string
+    url3DSuccess: string
+    url3DError: string
+    urlLoan: string | null
+    urlLoanSuccess: string | null
+    urlLoanError: string | null
+    token: string
+}
 
 export type MFSDirectPurchaseFunction = (
     data: DirectPurchaseData,
