@@ -4,10 +4,12 @@ import Utils from './Utils'
 import {
     CheckMasterPassFunction,
     DeleteCardFunction,
+    DirectPurchaseFunction,
     GetLastTokenFunction,
     LinkCardToClientFunction,
     ListCardsFunction,
     PurchaseFunction,
+    PurchaseAndRegisterFunction,
     RegisterFunction,
     ResendOtpFunction,
     SetAddressFunction,
@@ -143,6 +145,32 @@ export default class MasterPass {
             }
 
             MFS.purchase(combined, (status, response) => {
+                return Utils.mfsResponseHandler(
+                    status,
+                    response,
+                    resolve,
+                    reject
+                )
+            })
+        })
+
+    // Purchase And Register Method
+    public static purchaseAndRegister: PurchaseAndRegisterFunction = async data =>
+        new Promise((resolve, reject) => {
+            MFS.purchaseAndRegister(data, (status, response) => {
+                return Utils.mfsResponseHandler(
+                    status,
+                    response,
+                    resolve,
+                    reject
+                )
+            })
+        })
+
+    // Direct Purchase Method
+    public static directPurchase: DirectPurchaseFunction = async data =>
+        new Promise((resolve, reject) => {
+            MFS.directPurchase(data, (status, response) => {
                 return Utils.mfsResponseHandler(
                     status,
                     response,

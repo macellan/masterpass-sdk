@@ -259,6 +259,77 @@ export type MFSPurchaseFunction = (
 
 export type PurchaseFunction = (data: PurchaseData) => Promise<PurchaseResponse>
 
+export interface PurchaseAndRegisterData {
+    msisdn: string
+    accountAliasName: string
+    token: string
+    referenceNo: string
+    sendSms?: MasterPassBoolean
+    sendSmsLanguage: string
+    fP?: string
+    amount: string
+    actionType?: string
+    firstName: string
+    lastName: string
+    gender?: string
+    expiryDate: string
+    rtaPan: string
+    cardHolderName: string
+    orderNo?: string
+    merchantId?: string
+    rewardName?: string
+    rewardValue?: string
+    moneyCardInvoiceAmount?: string
+    moneyCardMigrosDiscountAmount?: string
+    moneyCardPaymentAmount?: string
+    moneyCardExtraDiscountAmount?: string
+    moneyCardProductBasedDiscountAmount?: string
+    installmentCount?: string
+    cvc: string
+    macroMerchantId?: string
+    paymentType?: string
+}
+
+export interface PurchaseAndRegisterResponse extends MFSBaseResponse {}
+
+export type MFSPurchaseAndRegisterFunction = (
+    data: PurchaseAndRegisterData,
+    callback: CallbackFunction<PurchaseAndRegisterResponse>
+) => void
+
+export type PurchaseAndRegisterFunction = (
+    data: PurchaseAndRegisterData
+) => Promise<PurchaseAndRegisterResponse>
+
+export interface DirectPurchaseData {
+    token: string
+    msisdn: string
+    sendSmsLanguage: string
+    fP?: string
+    amount: string
+    expiryDate: string
+    rtaPan: string
+    cardHolderName?: string
+    cvc: string
+    macroMerchantId?: string
+    orderNo?: string
+    paymentType?: string
+    installmentCount?: string
+    rewardName?: string
+    rewardValue?: string
+}
+
+export interface DirectPurchaseResponse extends MFSBaseResponse {}
+
+export type MFSDirectPurchaseFunction = (
+    data: DirectPurchaseData,
+    callback: CallbackFunction<DirectPurchaseResponse>
+) => void
+
+export type DirectPurchaseFunction = (
+    data: DirectPurchaseData
+) => Promise<DirectPurchaseResponse>
+
 export type MFSSetAdditionalParameters = (data: object) => void
 
 export type SetAdditionalParameters = (data: object) => void
@@ -275,6 +346,8 @@ export interface MasterPassSDKMethods {
     resendOtp: MFSResendOtpFunction
     linkCardToClient: MFSLinkCardToClientFunction
     purchase: MFSPurchaseFunction
+    purchaseAndRegister: MFSPurchaseAndRegisterFunction
+    directPurchase: MFSDirectPurchaseFunction
     setAdditionalParameters: MFSSetAdditionalParameters
 }
 
