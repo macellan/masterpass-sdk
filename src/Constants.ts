@@ -20,7 +20,6 @@ const DefaultMethodData: DefaultMethodDataConstants = {
         macroMerchantId: '',
         orderNo: '',
         paymentType: '',
-        installmentCount: '',
         rewardName: '',
         cvc: '',
         sendSms: 'N',

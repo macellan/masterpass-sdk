@@ -231,7 +231,7 @@ export interface PurchaseData {
     moneyCardPaymentAmount?: string
     moneyCardExtraDiscountAmount?: string
     moneyCardProductBasedDiscountAmount?: string
-    installmentCount?: string
+    installmentCount?: number
     cvc?: string
     macroMerchantId?: string
     orderNo?: string
@@ -241,7 +241,7 @@ export interface PurchaseData {
 export interface PurchaseResponse extends MFSBaseResponse {
     accountStatus: string | undefined
     amount: string | undefined
-    installmentCount: string | undefined
+    installmentCount: number | undefined
     orderNo: string | undefined
     token: string
     url3D: string
@@ -284,7 +284,7 @@ export interface PurchaseAndRegisterData {
     moneyCardPaymentAmount?: string
     moneyCardExtraDiscountAmount?: string
     moneyCardProductBasedDiscountAmount?: string
-    installmentCount?: string
+    installmentCount?: number
     cvc: string
     macroMerchantId?: string
     paymentType?: string
@@ -318,7 +318,7 @@ export interface DirectPurchaseData {
     macroMerchantId?: string
     orderNo?: string
     paymentType?: string
-    installmentCount?: string
+    installmentCount?: number
     rewardName?: string
     rewardValue?: string
 }
