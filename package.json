@@ -12,6 +12,9 @@
     "engines": {
         "node": ">=10"
     },
+    "publishConfig": {
+        "access": "public"
+    },
     "homepage": "https://github.com/macellan/masterpass-sdk",
     "scripts": {
         "start": "tsdx watch",
