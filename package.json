@@ -1,47 +1,54 @@
 {
-  "version": "0.1.0",
-  "license": "MIT",
-  "main": "dist/index.js",
-  "typings": "dist/index.d.ts",
-  "files": [
-    "dist",
-    "src"
-  ],
-  "engines": {
-    "node": ">=10"
-  },
-  "scripts": {
-    "start": "tsdx watch",
-    "build": "tsdx build",
-    "test": "tsdx test",
-    "lint": "tsdx lint",
-    "prepare": "tsdx build",
-    "size": "size-limit",
-    "analyze": "size-limit --why"
-  },
-  "peerDependencies": {},
-  "name": "@altpay/masterpass-sdk",
-  "author": "Onur Özkaya",
-  "module": "dist/altpay-masterpass-sdk.esm.js",
-  "size-limit": [
-    {
-      "path": "dist/altpay-masterpass-sdk.cjs.production.min.js",
-      "limit": "10 KB"
+    "name": "@macellan/masterpass-sdk",
+    "author": "Onur Özkaya",
+    "version": "1.0.0",
+    "license": "MIT",
+    "main": "dist/index.js",
+    "typings": "dist/index.d.ts",
+    "files": [
+        "dist",
+        "src"
+    ],
+    "engines": {
+        "node": ">=10"
     },
-    {
-      "path": "dist/altpay-masterpass-sdk.esm.js",
-      "limit": "10 KB"
+    "homepage": "https://github.com/macellan/masterpass-sdk",
+    "scripts": {
+        "start": "tsdx watch",
+        "build": "tsdx build",
+        "test": "tsdx test",
+        "lint": "tsdx lint",
+        "prepare": "tsdx build",
+        "prepack": "yarn build",
+        "size": "size-limit",
+        "analyze": "size-limit --why",
+        "release": "release-it"
+    },
+    "module": "dist/masterpass-sdk.esm.js",
+    "peerDependencies": {
+        "axios": "*"
+    },
+    "size-limit": [
+        {
+            "path": "dist/masterpass-sdk.cjs.production.min.js",
+            "limit": "10 KB"
+        },
+        {
+            "path": "dist/masterpass-sdk.esm.js",
+            "limit": "10 KB"
+        }
+    ],
+    "devDependencies": {
+        "@commitlint/cli": "^17.6.6",
+        "@commitlint/config-conventional": "^17.6.6",
+        "@release-it/conventional-changelog": "^8.0.1",
+        "@size-limit/preset-small-lib": "^8.2.6",
+        "axios": "^1.4.0",
+        "lefthook": "^1.4.3",
+        "release-it": "^17.1.1",
+        "size-limit": "^8.2.6",
+        "tsdx": "^0.14.1",
+        "tslib": "^2.5.3",
+        "typescript": "^5.1.3"
     }
-  ],
-  "devDependencies": {
-    "@commitlint/cli": "^17.6.6",
-    "@commitlint/config-conventional": "^17.6.6",
-    "@size-limit/preset-small-lib": "^8.2.6",
-    "axios": "^1.4.0",
-    "lefthook": "^1.4.3",
-    "size-limit": "^8.2.6",
-    "tsdx": "^0.14.1",
-    "tslib": "^2.5.3",
-    "typescript": "^5.1.3"
-  }
 }

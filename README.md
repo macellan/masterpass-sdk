@@ -1,1 +1,1 @@
-# AltPay - MasterPass SDK
+# Macellan - MasterPass SDK
