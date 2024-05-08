@@ -30,10 +30,15 @@ We follow the [conventional commits specification](https://www.conventionalcommi
 
 -   `feat`: new features, e.g. add new method to the module.
 -   `fix`: bug fixes, e.g. fix crash due to deprecated method.
+-   `docs`: changes into documentation, e.g. add usage example for the module.
+-   `style`: changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc.)
 -   `refactor`: code refactor, e.g. migrate from class components to hooks.
--   `docs`: changes into documentation, e.g. add usage example for the module..
+-   `perf`: improvements to code performance, e.g. optimize an algorithm to speed up processing.
 -   `test`: adding or updating tests, e.g. add integration tests using detox.
+-   `build`: changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm).
 -   `chore`: tooling changes, e.g. change CI config.
+-   `ci`: changes to our CI configuration files and scripts (examples: GitHub Actions, CircleCI).
+-   `revert`: reverts a previous commit
 
 Our pre-commit hooks verify that your commit message matches this format when committing.
 
@@ -44,7 +49,15 @@ We use the following branche names convention related to conventional commits:
 -   `master` is the production branch
 -   `feat/<name>` is the name of the feature branch
 -   `fix/<name>` is the name of the fix branch
+-   `docs/<name>` is the name of the docs branch
+-   `style/<name>` is the name of the style branch
+-   `refactor/<name>` is the name of the refactor branch
+-   `perf/<name>` is the name of the perf branch
+-   `test/<name>` is the name of the test branch
+-   `build/<name>` is the name of the build branch
 -   `chore/<name>` is the name of the chore branch
+-   `ci/<name>` is the name of the ci branch
+-   `revert/<name>` is the name of the revert branch
 
 ### Linting and tests
 
