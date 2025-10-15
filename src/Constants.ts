@@ -35,6 +35,7 @@ const DefaultMethodData: DefaultMethodDataConstants = {
 const ResponseCodes = {
     SUCCESS_EMPTY: '',
     SUCCESS: '0000',
+    VALIDATE_OTP_ERROR: '1409',
     VALIDATE_OTP: '5001',
     VALIDATE_MPIN: '5002',
     VALIDATE_DEVICE: '5008',
