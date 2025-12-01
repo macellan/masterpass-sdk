@@ -15,6 +15,7 @@ import {
     SetAddressFunction,
     SetClientIdFunction,
     ValidateTransactionFunction,
+    InitiateRecurringPaymentFunction,
 } from './Types'
 
 export default class MasterPass {
@@ -171,6 +172,19 @@ export default class MasterPass {
     public static directPurchase: DirectPurchaseFunction = async data =>
         new Promise((resolve, reject) => {
             MFS.directPurchase(data, (status, response) => {
+                return Utils.mfsResponseHandler(
+                    status,
+                    response,
+                    resolve,
+                    reject
+                )
+            })
+        })
+
+    // Initiate Recurring Payment Method
+    public static initiateRecurringPayment: InitiateRecurringPaymentFunction = async data =>
+        new Promise((resolve, reject) => {
+            MFS.initiateRecurringPayment(data, (status, response) => {
                 return Utils.mfsResponseHandler(
                     status,
                     response,

@@ -43,7 +43,14 @@ const ResponseCodes = {
     PIN_DETERMINATION: '5015',
 }
 
+const ActionTypes = {
+    INSERT: 'A',
+    UPDATE: 'U',
+    DELETE: 'D',
+}
+
 export default {
     DefaultMethodData: DefaultMethodData,
     ResponseCodes: ResponseCodes,
+    ActionTypes: ActionTypes,
 }

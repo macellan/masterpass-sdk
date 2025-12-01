@@ -4,6 +4,8 @@ export type CallbackFunction<T> = (status: MFSStatus, response: T) => void
 
 export type MasterPassBoolean = 'Y' | 'N'
 
+export type MasterPassActionType = 'A' | 'U' | 'D'
+
 export interface MFSBaseResponse {
     referenceNo: string
     responseCode: string
@@ -83,10 +85,10 @@ export type ListCardsFunction = (
 ) => Promise<ListCardsResponse>
 
 export interface RegisterData {
-    actionType?: string
+    actionType?: MasterPassActionType
     clientIp?: string
     delinkReason?: string
-    eActionType?: string
+    eActionType?: MasterPassActionType
     cardTypeFlag?: string
     cpinFlag?: MasterPassBoolean
     defaultAccount?: MasterPassBoolean
@@ -268,7 +270,7 @@ export interface PurchaseAndRegisterData {
     sendSmsLanguage: string
     fP?: string
     amount: string
-    actionType?: string
+    actionType?: MasterPassActionType
     firstName?: string
     lastName?: string
     gender?: string
@@ -342,6 +344,30 @@ export type DirectPurchaseFunction = (
     data: DirectPurchaseData
 ) => Promise<DirectPurchaseResponse>
 
+export interface InitiateRecurringPaymentData {
+    msisdn: string
+    token: string
+    listAccountName: string
+    amount: string
+    endDate?: string
+    actionType?: MasterPassActionType
+    referenceNo: string
+    sendSms: MasterPassBoolean
+    sendSmsLanguage: string
+    productId?: string
+}
+
+export interface InitiateRecurringPaymentResponse extends MFSBaseResponse {}
+
+export type MFSInitiateRecurringPaymentFunction = (
+    data: InitiateRecurringPaymentData,
+    callback: CallbackFunction<InitiateRecurringPaymentResponse>
+) => void
+
+export type InitiateRecurringPaymentFunction = (
+    data: InitiateRecurringPaymentData
+) => Promise<InitiateRecurringPaymentResponse>
+
 export type MFSSetAdditionalParameters = (data: object) => void
 
 export type SetAdditionalParameters = (data: object) => void
@@ -360,6 +386,7 @@ export interface MasterPassSDKMethods {
     purchase: MFSPurchaseFunction
     purchaseAndRegister: MFSPurchaseAndRegisterFunction
     directPurchase: MFSDirectPurchaseFunction
+    initiateRecurringPayment: MFSInitiateRecurringPaymentFunction
     setAdditionalParameters: MFSSetAdditionalParameters
 }
 
