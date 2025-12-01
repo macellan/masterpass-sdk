@@ -1,5 +1,12 @@
 
 
+# [1.2.0](https://github.com/macellan/masterpass-sdk/compare/v1.1.1...v1.2.0) (2025-12-01)
+
+
+### Features
+
+* **recurring-payment:** add initiate recurring payment functionality ([#4](https://github.com/macellan/masterpass-sdk/issues/4)) ([112e727](https://github.com/macellan/masterpass-sdk/commit/112e727a9b2ecdd60cbfab92cbd462277ae05416))
+
 ## [1.1.1](https://github.com/macellan/masterpass-sdk/compare/v1.1.0...v1.1.1) (2025-10-15)
 
 # [1.1.0](https://github.com/macellan/masterpass-sdk/compare/v1.0.0...v1.1.0) (2025-10-15)
